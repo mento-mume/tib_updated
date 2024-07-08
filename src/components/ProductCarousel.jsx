@@ -1,44 +1,50 @@
-import Card from "./Card";
 import image1 from "../assets/tops.svg";
 import image2 from "../assets/buttoms.svg";
 import image3 from "../assets/dresses.svg";
 import image4 from "../assets/suits.svg";
 import image5 from "../assets/sandals.svg";
 
-const ProductCarousel = () => {
-  const cards = [
-    {
-      imageUrl: image1,
-      text: "Tops",
-    },
-    {
-      imageUrl: image2,
-      text: "Buttoms",
-    },
-    {
-      imageUrl: image3,
-      text: "Dresses",
-    },
-    {
-      imageUrl: image4,
-      text: "Suits",
-    },
-    {
-      imageUrl: image5,
-      text: "Sandals",
-    },
-  ];
+import { useState } from "react";
+const categories = [
+  { name: "Tops", icon: image1 },
+  { name: "Bottoms", icon: image2 },
+  { name: "Dresses", icon: image3 },
+  { name: "Suits", icon: image4 },
+  { name: "Sandals", icon: image5 },
+  { name: "Suits", icon: image4 },
+];
+
+function ProductCarousel() {
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="mt-[22px] ml-4 mb-4">
-      <div className="font-heading text-sm font-bold mb-4">Product</div>
-      <div className="flex flex-row justify-between">
-        {cards.map((card, index) => (
-          <Card key={index} imageUrl={card.imageUrl} text={card.text} />
+    <div className="overflow-x-auto">
+      <div className="flex space-x-4 p-4">
+        {categories.map((category, index) => (
+          <div
+            key={index}
+            className={`flex flex-col items-center cursor-pointer ${
+              activeIndex === index ? "text-primary" : "text-gray-400"
+            }`}
+            onClick={() => setActiveIndex(index)}
+          >
+            <div
+              className={`text-3xl ${
+                activeIndex === index ? "rounded-full p-2" : ""
+              }`}
+            >
+              <img
+                src={category.icon}
+                alt={category.name}
+                className="w-12 h-12"
+              />
+            </div>
+            <span className="mt-2">{category.name}</span>
+          </div>
         ))}
       </div>
     </div>
   );
-};
+}
 
 export default ProductCarousel;

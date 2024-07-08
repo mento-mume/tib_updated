@@ -6,7 +6,7 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-primary text-white mt-[60px] p-2.5 ml-px gap-2.5">
+    <header className="bg-primary text-white  p-2.5 ml-px gap-2.5">
       <div className="container mx-auto flex justify-between items-center  ">
         <div className="block md:hidden">
           <button
