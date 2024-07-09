@@ -14,7 +14,7 @@ const Products = () => {
     },
   ];
   return (
-    <div className="mx-[30px]  h-80 mt-[25px]  ">
+    <div className="mx-[30px]  h-full mt-[25px]  ">
       <div className="flex flex-row justify-between">
         <p className=" text-sm font-bold">New</p>
         <p className=" text-sm font-bold text-secondary"> View All</p>
