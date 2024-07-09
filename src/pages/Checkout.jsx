@@ -4,6 +4,13 @@ import Rectangle from "../assets/rectangle.svg";
 import OrderSummary from "../components/OrderSummary";
 import CheckoutCard from "../components/Checkoutcard";
 const Checkout = () => {
+  const orders = [
+    {
+      subtotal: 500,
+      fee: 20,
+      total: 520,
+    },
+  ];
   const product = [
     {
       image: Rectangle,
@@ -46,7 +53,14 @@ const Checkout = () => {
           />
         ))}
         <div className="flex justify-center gap-4 items-center h-[211px]">
-          <OrderSummary />
+          {orders.map((order, index) => (
+            <OrderSummary
+              key={index}
+              subtotal={order.subtotal}
+              fee={order.fee}
+              total={order.total}
+            />
+          ))}
         </div>
       </div>
     </div>
