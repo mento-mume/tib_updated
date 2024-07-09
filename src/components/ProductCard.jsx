@@ -8,7 +8,7 @@ const ProductCard = ({ imageUrl, name, amount }) => {
         alt={name}
         className="w-full h-[212]px object-cover rounded-t"
       />
-      <div className="flex flex-col bg-[#F6F6F6]  p-2 drop-shadow-[0px_4px_4px_0px_rgba(203, 203, 203, 0.3)] ">
+      <div className="flex flex-col bg-[#F6F6F6]  p-2 drop-shadow-md">
         <p className="text-[10px] font-normal ">
           Styled by <span className="text-sm text-primary">TIB</span>
         </p>

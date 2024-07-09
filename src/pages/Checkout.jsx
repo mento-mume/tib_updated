@@ -1,24 +1,26 @@
 import { Link } from "react-router-dom";
 import arrow from "../assets/arrow.svg";
+import Rectangle from "../assets/rectangle.svg";
+import OrderSummary from "../components/OrderSummary";
 import CheckoutCard from "../components/Checkoutcard";
 const Checkout = () => {
   const product = [
     {
-      image: "path/to/image.jpg",
+      image: Rectangle,
       name: "Product Name",
       price: 100,
       quantity: 1,
     },
 
     {
-      image: "path/to/image.jpg",
+      image: Rectangle,
       name: "Product Name",
       price: 100,
       quantity: 1,
     },
 
     {
-      image: "path/to/image.jpg",
+      image: Rectangle,
       name: "Product Name",
       price: 100,
       quantity: 1,
@@ -43,6 +45,9 @@ const Checkout = () => {
             quantity={product.quantity}
           />
         ))}
+        <div className="flex justify-center gap-4 items-center h-[211px]">
+          <OrderSummary />
+        </div>
       </div>
     </div>
   );

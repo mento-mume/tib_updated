@@ -37,8 +37,8 @@ const CheckoutCard = ({ image, name, price, quantity }) => {
 CheckoutCard.propTypes = {
   product: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
-  quantity: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
 };
 
